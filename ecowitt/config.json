@@ -1,0 +1,31 @@
+{
+    "name": "Ecowitt",
+    "version": "1.0.9-1",
+    "slug": "ecowitt",
+    "description": "An addon for processing data from Ecowitt Personal Weather Stations",
+    "stage": "stable",
+    "arch": [
+        "armhf",
+        "armv7",
+        "aarch64",
+        "amd64",
+        "i386"
+    ],
+    "startup": "application",
+    "boot": "auto",
+    "services": [
+        "mqtt:need"
+    ],
+    "options": {
+      "unit_system": "imperial"
+    },
+    "schema": {
+      "unit_system": "match(imperial|metric)?"
+    },
+    "ports": {
+        "8000/tcp": 8000
+    },
+    "ports_description": {
+        "8000/tcp": "The port the Ecowitt will use to submit data to Home Assistant"
+    }
+}
